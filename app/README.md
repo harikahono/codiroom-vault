@@ -1,4 +1,7 @@
+
 # Codiroom Vault — Quick Start (for non-technical users)
+
+Live demo: https://codiroom-vault.netlify.app/
 
 This is a small single-page app to manage simple project finances: add projects, add team members, inject funds, record expenses (direct or shared), and export full reports as PDF.
 
