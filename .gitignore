@@ -1,0 +1,17 @@
+/app/dist/
+/app/index.html
+/app/index-*.css
+/app/index-*.js
+/app/package-lock.json
+/app/.vite/
+/app/.vite-temp/
+/app/dist/
+# Node modules
+/node_modules/
+/app/node_modules/
+# Editor/temp
+.DS_Store
+.env
+*.log
+# pnpm lock should be kept
+# pnpm-lock.yaml

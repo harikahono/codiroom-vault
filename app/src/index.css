@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@400;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Codiroom Design System - Brutalist */
+    --cdr-primary: 289 96% 15%;
+    --cdr-primary-fg: 300 14% 97%;
+    --cdr-secondary: 351 70% 61%;
+    --cdr-accent: 336 93% 18%;
+    --cdr-foreground: 300 33% 3%;
+    --cdr-card: 300 14% 94%;
+    --cdr-muted: 300 10% 90%;
+    --cdr-muted-fg: 300 20% 30%;
+    --cdr-white: 0 0% 100%;
+    --cdr-black: 0 0% 0%;
+    --cdr-glitch-cyan: 180 100% 50%;
+    --cdr-coral: 351 70% 61%;
+    --cdr-purple: 289 96% 15%;
+    --cdr-crimson: 336 93% 18%;
+    
+    /* shadcn/ui mapping */
+    --background: 300 14% 97%;
+    --foreground: 300 33% 3%;
+    --card: 300 14% 94%;
+    --card-foreground: 300 33% 3%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 300 33% 3%;
+    --primary: 289 96% 15%;
+    --primary-foreground: 300 14% 97%;
+    --secondary: 351 70% 61%;
+    --secondary-foreground: 300 14% 97%;
+    --muted: 300 10% 90%;
+    --muted-foreground: 300 20% 30%;
+    --accent: 336 93% 18%;
+    --accent-foreground: 300 14% 97%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 289 96% 15%;
+    --radius: 0px;
+    
+    /* Sidebar */
+    --sidebar-background: 300 14% 94%;
+    --sidebar-foreground: 300 33% 3%;
+    --sidebar-primary: 289 96% 15%;
+    --sidebar-primary-foreground: 300 14% 97%;
+    --sidebar-accent: 300 10% 90%;
+    --sidebar-accent-foreground: 300 33% 3%;
+    --sidebar-border: 0 0% 0%;
+    --sidebar-ring: 289 96% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Brutalist Card */
+  .brutal-card {
+    @apply bg-white border-[6px] border-black;
+    box-shadow: 8px 8px 0 0 #000;
+  }
+  
+  .brutal-card-lg {
+    @apply bg-white border-[10px] border-black;
+    box-shadow: 16px 16px 0 0 rgba(62, 2, 75, 0.5);
+  }
+  
+  /* Brutalist Button */
+  .brutal-btn {
+    @apply px-6 py-3 font-bold uppercase tracking-wide border-[4px] border-black bg-white transition-all;
+    box-shadow: 4px 4px 0 0 #000;
+  }
+  
+  .brutal-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 #000;
+  }
+  
+  .brutal-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 #000;
+  }
+  
+  .brutal-btn-primary {
+    @apply bg-[hsl(289,96%,15%)] text-white border-black;
+    box-shadow: 4px 4px 0 0 #000;
+  }
+  
+  .brutal-btn-secondary {
+    @apply bg-[hsl(351,70%,61%)] text-white border-black;
+    box-shadow: 4px 4px 0 0 #000;
+  }
+  
+  .brutal-btn-danger {
+    @apply bg-[hsl(336,93%,18%)] text-white border-black;
+    box-shadow: 4px 4px 0 0 #000;
+  }
+  
+  /* Brutalist Input */
+  .brutal-input {
+    @apply px-4 py-3 border-[4px] border-black bg-white font-medium;
+  }
+  
+  .brutal-input:focus {
+    @apply outline-none;
+    box-shadow: 4px 4px 0 0 rgba(62, 2, 75, 0.3);
+  }
+  
+  /* Brutalist Table */
+  .brutal-table {
+    @apply w-full border-collapse;
+  }
+  
+  .brutal-table th,
+  .brutal-table td {
+    @apply border-[3px] border-black px-4 py-3 text-left;
+  }
+  
+  .brutal-table th {
+    @apply bg-[hsl(289,96%,15%)] text-white font-bold uppercase text-sm tracking-wide;
+  }
+  
+  .brutal-table tr:nth-child(even) {
+    @apply bg-[hsl(300,14%,94%)];
+  }
+  
+  .brutal-table tr:nth-child(odd) {
+    @apply bg-white;
+  }
+  
+  /* Badge */
+  .brutal-badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-bold uppercase tracking-wide border-[3px] border-black;
+  }
+  
+  .brutal-badge-injection {
+    @apply bg-green-500 text-white border-black;
+  }
+  
+  .brutal-badge-expense {
+    @apply bg-[hsl(351,70%,61%)] text-white border-black;
+  }
+  
+  .brutal-badge-void {
+    @apply bg-gray-500 text-white border-black;
+  }
+  
+  .brutal-badge-decommission {
+    @apply bg-[hsl(336,93%,18%)] text-white border-black;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Syne', sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
